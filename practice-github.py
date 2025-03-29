@@ -1,5 +1,3 @@
-!pip install -q requests torch bitsandbytes transformers sentencepiece accelerate
-
 from google.colab import userdata
 from huggingface_hub import login
 from transformers import AutoTokenizer, AutoModelForCausalLM, TextStreamer, BitsAndBytesConfig
@@ -23,4 +21,4 @@ messages = [
 
 # ------------------------------------------------------------
 
-
+print(messages)
