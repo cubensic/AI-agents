@@ -1,12 +1,10 @@
-git config --global user.email "antepeovic@gmail.com"
-git config --global user.name "Ante Peovic"
+!pip install -q requests torch bitsandbytes transformers sentencepiece accelerate
 
+from google.colab import userdata
+from huggingface_hub import login
+from transformers import AutoTokenizer, AutoModelForCausalLM, TextStreamer, BitsAndBytesConfig
+import torch
 
-git config --global user.email "antepeovic@gmail.com"
-git config --global user.name "Ante Peovic"
+hf_token = userdata.get("hf_token")
+login(token=hf_token, add_to_git_credential=True)
 
-git init
-git add .
-git commit -m "Initial commit"
-git branch -M main
-git remote add origin https://github.com/cubensic/AI-agents.git
